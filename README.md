@@ -111,12 +111,16 @@ var printStargazers = function(users) {
 This function will print an array of users to the console. Next, copy the following code into `js/api_client.js`.
 
 ```javascript
+function makeStargazersApiRequest() {
   $.ajax({
     url: 'https://api.github.com/repos/rails/rails/stargazers',
     type: 'GET',
   }).done(function(users) {
     printStargazers(users);
   });
+};
+
+makeStargazersApiRequest();
 ```
 This code makes a request to the GitHub API for all the users that starred the Ruby on Rails repository. The callback calls the `printStargazers` function. Let's try out our code so far. In your terminal run `python -m SimpleHTTPServer`. Browse to http://localhost:8000 and open Chrome developer tools. You should see a number of logs like this `dhh starred the Rails Repository`.
 
@@ -149,3 +153,5 @@ Here we are sending markdown to the GitHub API to render into HTML. Once we get 
 ## Resources
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme' title='APIS'>APIS</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-readme'>APIs and JSON </a> on Learn.co and start learning to code for free.</p>
